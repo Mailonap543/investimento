@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Análise de Aporte - DY</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+
+    <h1>Análise de Dividend Yield (DY)</h1>
+    <p class="description">
+        Informe o símbolo da ação para calcular o YIELD PROJETADO e obter um veredicto de aporte.
+    </p>
+
+    <form th:action="@{/analisar}" method="post">
+        <div class="form-group">
+            <label for="symbol">Símbolo da Ação B3:</label>
+            <input type="text" id="symbol" name="symbol" placeholder="Ex: VALE3.SA" required>
+        </div>
+
+        <div class="form-group">
+            <label for="minYield">Critério de DY Mínimo (%):</label>
+            <input type="number" id="minYield" name="minYield" step="0.01" value="6.0" required>
+        </div>
+
+        <button type="submit" class="btn-primary">Analisar Ação</button>
+    </form>
+</div>
+</body>
+</html>

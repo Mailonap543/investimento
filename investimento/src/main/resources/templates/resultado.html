@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado da Análise</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <style>
+        .result-box {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: left;
+            margin-top: 20px;
+        }
+        .result-box h2 {
+            color: #004d40;
+            border-bottom: 2px solid #004d40;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .result-item {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .verdict-good {
+            color: #007bff; /* Azul para BOM */
+            font-weight: bold;
+        }
+        .verdict-bad {
+            color: #dc3545; /* Vermelho para NÃO IDEAL */
+            font-weight: bold;
+        }
+        .message-warning {
+            color: #ffc107;
+            font-weight: bold;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #fff3cd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+
+    <h1>Relatório de Análise DY</h1>
+
+    <div class="result-box">
+        <p th:if="${result.message != null && result.message != ''}"
+           class="message-warning" th:text="${result.message}">
+            Mensagem de Aviso da Análise
+        </p>
+
+        <h2>Análise de <span th:text="${result.symbol}">Ação</span></h2>
+
+        <div class="result-item">
+            <strong>💰 Preço Atual:</strong> R$ <span th:text="${#numbers.formatDecimal(result.currentPrice, 1, 2)}">0.00</span>
+        </div>
+
+        <div class="result-item">
+            <strong>📊 Média Div. (Unitário):</strong> R$ <span th:text="${#numbers.formatDecimal(result.averageDividend, 1, 4)}">0.0000</span>
+        </div>
+
+        <hr>
+
+        <div class="result-item">
+            <strong>⭐ YIELD PROJETADO:</strong> <span th:text="${#numbers.formatDecimal(result.projectedDividendYield, 1, 2)}">0.00</span>%
+        </div>
+
+        <div class="result-item">
+            <strong>Critério Mínimo:</strong> > <span th:text="${#numbers.formatDecimal(result.acceptableYieldThreshold, 1, 2)}">0.00</span>%
+        </div>
+
+        <hr>
+
+        <div class="result-item" style="font-size: 1.4em; margin-top: 20px;">
+            <strong>VEREDICTO:</strong>
+            <span th:class="${result.verdict.contains('BOM') ? 'verdict-good' : 'verdict-bad'}"
+                  th:text="${result.verdict}">
+                    VEREDICTO FINAL AQUI
+                </span>
+        </div>
+
+    </div>
+
+    <a th:href="@{/}" class="btn-primary" style="margin-top: 20px; display: block; text-decoration: none;">Realizar Nova Análise</a>
+</div>
+</body>
+</html>

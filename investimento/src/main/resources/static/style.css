@@ -1,0 +1,104 @@
+
+
+.container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 380px; /* DIMINUÍDO DE 450px PARA 380px */
+    text-align: center;
+
+
+.logo-img {
+    max-width: 80px; /* DIMINUÍDO DE 100px PARA 80px */
+    height: auto;
+    margin-bottom: 20px; /* Garante que haja espaço entre a imagem e o título */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    text-align: center; /* Centraliza cabeçalhos e elementos inline */
+}
+
+h1 {
+    color: #004d40;
+    margin-bottom: 10px;
+    font-size: 1.8em;
+}
+
+.description {
+    color: #555;
+    margin-bottom: 25px;
+    font-size: 0.9em;
+}
+
+/* Centraliza os grupos de formulário (rótulos e inputs) */
+.form-group {
+    text-align: left; /* Mantém o label alinhado à esquerda dentro do container */
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+
+.logo-img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-primary {
+    background-color: #004d40;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #00332a;
+}
